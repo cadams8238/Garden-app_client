@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import OneGardenDashboard from './components/dashboard-oneGarden';
+import Form from './components/form-landingPage';
 
 
 export default class App extends Component {
   render() {
     return(
         <div>
-            <OneGardenDashboard />
+            <Form />
         </div>
     );
   }

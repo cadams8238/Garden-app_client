@@ -3,7 +3,7 @@ import ActionButton from './actionButton';
 import Input from './form-input';
 import './styles/form-login.css';
 
-export default function Form_signUp() {
+export default function Form_login() {
 
     return (
         <form className="form">

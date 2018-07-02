@@ -1,3 +1,8 @@
+.all-garden-content {
+    margin: 20px 10%;
+    margin-top: 150px;
+}
+
 h2.garden-name {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
@@ -13,8 +18,4 @@ h2.garden-name {
 
 h4.tasks {
     font-style: italic;
-}
-
-.all-garden-content {
-    margin: 20px 10%;
 }

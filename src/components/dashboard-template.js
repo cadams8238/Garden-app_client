@@ -1,22 +1,19 @@
 import React from 'react';
+import Header from './dashboard-header';
 import AllGardensDashboard from './dashboard-allGardens';
+import OneGardenDashboard from './dashboard-oneGarden';
+import Footer from './dashboard-footer';
 import './styles/dashboard-template.css';
 
 export default function DashboardTemplate() {
     return (
         <div>
-            <header>
-                <nav className="navbar">
-                    <h1 className="logo">Phytochor</h1>
-                    <a href="#" className="menu">Menu</a>
-                </nav>
-            </header>
+            <Header />
             <section>
-                {/* <AllGardensDashboard /> */}
+                <AllGardensDashboard />
+                {/* <OneGardenDashboard /> */}
             </section>
-            <footer>
-                <img />
-            </footer>
+            <Footer />
         </div>
     );
 }
