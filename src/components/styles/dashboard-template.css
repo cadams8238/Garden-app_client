@@ -1,0 +1,16 @@
+.dashboard {
+    margin: 20px 10%;
+}
+
+h1.logo {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    float: left;
+}
+
+.menu {
+    float: right;
+    text-align: center;
+    padding-top: 20px;
+}

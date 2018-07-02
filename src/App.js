@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Form_login from './components/form-login';
+import DashboardTemplate from './components/dashboard-template';
 // import ActionButton from './components/actionButton';
 
 export default class App extends Component {
   render() {
     return(
         <div>
-            <Form_login />
+            <DashboardTemplate />
             {/* <ActionButton label="Sign up"/> */}
         </div>
     );
