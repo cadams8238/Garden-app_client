@@ -1,0 +1,26 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: yellow;
+}
+
+/* .navbar::after {
+    content: "";
+    clear: both;
+    display: block;
+} */
+
+h1.logo {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    float: left;
+    padding-left: 10%;
+}
+
+a.menu {
+    float: right;
+    padding-top: 25px;
+    padding-right: 10%;
+}
