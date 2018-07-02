@@ -1,0 +1,20 @@
+h2.garden-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+}
+
+.to-do-list {
+    list-style-type: none;
+}
+
+.to-do-list input {
+    margin-left: 10px;
+}
+
+h4.tasks {
+    font-style: italic;
+}
+
+.all-garden-content {
+    margin: 20px 10%;
+}

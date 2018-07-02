@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AllGardensDashboard from './components/dashboard-allGardens';
+import OneGardenDashboard from './components/dashboard-oneGarden';
 
 
 export default class App extends Component {
   render() {
     return(
         <div>
-            <AllGardensDashboard />
+            <OneGardenDashboard />
         </div>
     );
   }
