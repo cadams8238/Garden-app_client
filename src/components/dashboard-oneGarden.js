@@ -1,4 +1,5 @@
 import React from 'react';
+import Calendar from './calendar';
 import './styles/dashboard-oneGarden.css';
 
 export default function OneGardenDashboard() {
@@ -18,7 +19,7 @@ export default function OneGardenDashboard() {
             </form>
             <section>
                 <h4 className="tasks">Completed Tasks:</h4>
-                {/* <Calendar /> */}
+                <Calendar />
             </section>
         </div>
     );
