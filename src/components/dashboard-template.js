@@ -11,7 +11,7 @@ export default function DashboardTemplate() {
                     <a href="#" className="menu">Menu</a>
                 </nav>
             </header>
-            <section className="dashboard-content">
+            <section>
                 {/* <AllGardensDashboard /> */}
             </section>
             <footer>
