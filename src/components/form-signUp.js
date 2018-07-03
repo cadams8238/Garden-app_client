@@ -1,21 +1,62 @@
 import React from 'react';
+import { reduxForm, Field } from 'redux-form';
 import ActionButton from './actionButton';
 import Input from './form-input';
 import './styles/form-signUp.css';
 
-export default function Form_signUp() {
+export class Form_signUp extends React.Component {
+    onSubmit(values) {
+        console.log(values);
+    }
 
-    return (
-        <form className="form">
-            <fieldset>
-                <legend>Sign up</legend>
-                <Input id="username" label="Username:"/>
-                <Input id="email" label="Email:" />
-                <Input id="password" label="Password:" />
-                <Input id="confirm-password" label="Confirm Password:" />
+    render() {
+        // console.log(this.props.handleSubmit)
+        return (
+            <form
+                className="form"
+                onSubmit={this.props.handleSubmit(values => {
+                    console.log(values);
+                    this.onSubmit(values);
+                })}
+            >
+                <fieldset>
+                    <legend>Sign up</legend>
+                    <Field
+                        id="username"
+                        name="username"
+                        label="Username:"
+                        component={Input}
+                    />
+                    <Field
+                        id="email"
+                        name="email"
+                        label="Email:"
+                        component={Input}
+                    />
+                    <Field
+                        id="password"
+                        name="password"
+                        label="Password:"
+                        component={Input}
+                        element="password"
 
-                <ActionButton label="Submit"/>
-            </fieldset>
-        </form>
-    );
+                    />
+                    <Field
+                        id="confirm-password"
+                        name="confirm-password"
+                        label="Confirm Password:"
+                        component={Input}
+                        element="password"
+
+                    />
+
+                    <ActionButton label="Submit"/>
+                </fieldset>
+            </form>
+        );
+    }
 }
+
+export default reduxForm({
+    form: 'sign-up'
+})(Form_signUp);

@@ -10,8 +10,8 @@ export default function Form() {
             {/* <img />
             <img /> */}
 
-            <Form_login />
-            {/* <Form_signUp /> */}
+            {/* <Form_login /> */}
+            <Form_signUp />
         </div>
     );
 }
