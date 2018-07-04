@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 import ActionButton from './actionButton';
 import Input from './form-input';
@@ -51,6 +52,12 @@ export class Form_signUp extends React.Component {
                     />
 
                     <ActionButton label="Submit"/>
+
+                    <p>
+                        <Link to="/login">
+                            Already registered? Login here
+                        </Link>
+                    </p>
                 </fieldset>
             </form>
         );

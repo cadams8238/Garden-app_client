@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ActionButton from './actionButton';
 import Input from './form-input';
 import './styles/form-login.css';
@@ -13,6 +14,12 @@ export default function Form_login() {
                 <Input id="password" label="Password:" />
 
                 <ActionButton label="Submit"/>
+
+                <p>
+                    <Link to="/signUp">
+                        Haven't registered? Sign up here
+                    </Link>
+                </p>
             </fieldset>
         </form>
     );
