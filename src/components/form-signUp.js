@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
+
+import { required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed } from '../validators';
 import ActionButton from './actionButton';
 import Input from './form-input';
 import './styles/form-signUp.css';
@@ -27,6 +29,7 @@ export class Form_signUp extends React.Component {
                         name="username"
                         label="Username:"
                         component={Input}
+                        validate={[required, notEmpty, isTrimmed]}
                     />
                     <Field
                         id="email"
@@ -40,16 +43,16 @@ export class Form_signUp extends React.Component {
                         label="Password:"
                         component={Input}
                         element="password"
-
+                        validate={[required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed]}
                     />
-                    <Field
+                    {/* <Field
                         id="confirm-password"
                         name="confirm-password"
                         label="Confirm Password:"
                         component={Input}
                         element="password"
-
-                    />
+                        validate={[required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed]}
+                    /> */}
 
                     <ActionButton label="Submit"/>
 
