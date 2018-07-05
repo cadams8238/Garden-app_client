@@ -3,22 +3,28 @@ import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 
 import { required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed } from '../validators';
+import { registerUser } from '../actions/users';
+import { login } from '../actions/auth';
+
 import ActionButton from './actionButton';
 import Input from './form-input';
 import './styles/form-signUp.css';
 
 export class Form_signUp extends React.Component {
     onSubmit(values) {
-        console.log(values);
+        const { username, password } = values;
+        const user = {username, password};
+        // console.log(user);
+        return this.props
+            .dispatch(registerUser(user))
+            .then(() => this.props.dispatch(login(username, password)));
     }
 
     render() {
-        // console.log(this.props.handleSubmit)
         return (
             <form
                 className="form"
                 onSubmit={this.props.handleSubmit(values => {
-                    console.log(values);
                     this.onSubmit(values);
                 })}
             >
@@ -31,12 +37,13 @@ export class Form_signUp extends React.Component {
                         component={Input}
                         validate={[required, notEmpty, isTrimmed]}
                     />
-                    <Field
+                    {/* <Field
                         id="email"
                         name="email"
                         label="Email:"
                         component={Input}
-                    />
+                        validate={[required, notEmpty]}
+                    /> */}
                     <Field
                         id="password"
                         name="password"
@@ -57,7 +64,7 @@ export class Form_signUp extends React.Component {
                     <ActionButton label="Submit"/>
 
                     <p>
-                        <Link to="/login">
+                        <Link to="/auth/login">
                             Already registered? Login here
                         </Link>
                     </p>

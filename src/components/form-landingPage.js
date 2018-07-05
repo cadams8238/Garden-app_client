@@ -1,33 +1,43 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Route, Redirect, Link, withRouter } from 'react-router-dom';
 import Form_signUp from './form-signUp';
 import Form_login from './form-login';
 import './styles/form-landingPage.css';
 
-export default class Form extends React.Component {
-    onSubmit(values) {
 
-    }
+export function FormLandingPage(props) {
 
-    render() {
+    if(props.loggedIn) {
         return (
-            <Router>
-                <div>
-                    <header>
-                        {/* add link here to landing page when completed */}
-                        <h1 className="logo">Phytochor</h1>
-                    </header>
-                    <main>
-                        {/* <img />
-                        <img /> */}
-
-                        {/* <Form_login /> */}
-                        {/* <Form_signUp /> */}
-                        <Route exact path="/signUp" component={Form_signUp} />
-                        <Route exact path="/login" component={Form_login} />
-                    </main>
-                </div>
-            </Router>
+            <Redirect to="/dashboard/allGardens" />
         );
     }
+
+    return (
+        <div>
+            <header>
+                <h1 className="form-logo">Phytochor</h1>
+            </header>
+            <main>
+                <Route exact path="/auth/signUp" component={Form_signUp} />
+                <Route exact path="/auth/login" component={Form_login} />
+                {/* <Link to="/auth/login">
+                    login
+                </Link>
+
+                <Link to="/auth/signUp">
+                    sign up
+                </Link> */}
+
+            </main>
+        </div>
+    )
+
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+})
+
+export default connect(mapStateToProps)(FormLandingPage);

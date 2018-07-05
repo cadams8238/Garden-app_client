@@ -6,7 +6,7 @@ export default function Header() {
         <header>
             <nav className="navbar">
                 <h1 className="logo">Phytochor</h1>
-                <a href="#" className="menu">Menu</a>
+                <a href="" className="menu">Menu</a>
             </nav>
         </header>
     );

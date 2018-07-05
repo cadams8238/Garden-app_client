@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Form from './components/form-landingPage';
-import Test from './components/test';
+// import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import FormLandingPage from './components/form-landingPage';
+// import Test from './components/test';
+import DashboardTemplate from './components/dashboard-template';
 
 
 export default class App extends Component {
   render() {
     return(
         <div>
-            <Form />
+            <Route path="/auth" component={FormLandingPage} />
+            <Route path="/dashboard" component={DashboardTemplate} />
             {/* <Test /> */}
         </div>
     );
