@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, Link, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import Form_signUp from './form-signUp';
 import Form_login from './form-login';
 import './styles/form-landingPage.css';

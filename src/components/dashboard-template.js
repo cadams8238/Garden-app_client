@@ -1,6 +1,6 @@
 import React from 'react';
 // import { connect } from 'react-redux';
-import { BrowserRouter as Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import requiresLogin from './requires-login';
 
 import Header from './dashboard-header';
@@ -15,8 +15,10 @@ export function DashboardTemplate(props) {
         <div>
             <Header />
             <section>
-                <Route exact path="/allGardens" component={AllGardensDashboard} />
-                <Route exact path="/oneGarden" component={OneGardenDashboard} />
+                {/* <Switch> */}
+                    <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
+                    <Route exact path="/dashboard/oneGarden" component={OneGardenDashboard} />
+                {/* </Switch> */}
             </section>
             <Footer />
         </div>
