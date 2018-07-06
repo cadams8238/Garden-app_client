@@ -9,21 +9,35 @@ import OneGardenDashboard from './dashboard-oneGarden';
 import Footer from './dashboard-footer';
 import './styles/dashboard-template.css';
 
-export function DashboardTemplate(props) {
+export class DashboardTemplate extends React.Component {
 
-    return (
-        <div>
-            <Header />
-            <section>
-                {/* <Switch> */}
-                    <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
-                    <Route exact path="/dashboard/oneGarden" component={OneGardenDashboard} />
-                {/* </Switch> */}
-            </section>
-            <Footer />
-        </div>
-    );
+    componentDidMount() {
+        // this.props.dispatch( fetchDataFromBackEnd )
+    }
+
+    render() {
+        return (
+            <div>
+                <Header />
+                <section>
+                    {/* <Switch> */}
+                        <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
+                        <Route exact path="/dashboard/oneGarden" component={OneGardenDashboard} />
+                    {/* </Switch> */}
+                </section>
+                <Footer />
+            </div>
+        );
+    }
 }
 
+const mapStateToProps = state => {
+    // const {currentUser} = state.auth;
+    return {
+        data: state.gardens.data,
+        username: state.auth.currentUser.username
+    }
+}
 
+// requiresLogin()(connect(mapStateToProps)(DashboardTemplate));
 export default requiresLogin()(DashboardTemplate);
