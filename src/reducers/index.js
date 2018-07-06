@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import weatherDataReducer from './weatherDataReducer';
 import authReducer from './auth';
-import gardenReducer from './gardens';
+import gardenReducer from './userGardens';
 
 const rootReducer = combineReducers({
     weather: weatherDataReducer,
