@@ -15,9 +15,9 @@ export function AllGardensDashboard(props) {
             </p>
         </li>
     ))
-
+    console.log(props.data)
     console.log(gardens)
-    
+
     return (
         <div className="all-gardens-content">
             <section>

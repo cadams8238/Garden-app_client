@@ -21,20 +21,16 @@ export const fetchUserGardensError = error => ({
 
 export const getGardensData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    console.log(authToken);
 
     dispatch(fetchUserGardensRequest());
     return (
-        fetch(`${API_BASE_URL}/gardens`, {
+        fetch(`${API_BASE_URL}/garden`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${authToken}`
             }
         })
-        .then(res => {
-            console.log(res)
-            normalizeResponseErrors(res)
-        })
+        .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(data => dispatch(fetchUserGardensSuccess(data)))
         .catch(err => dispatch(fetchUserGardensError(err)))
