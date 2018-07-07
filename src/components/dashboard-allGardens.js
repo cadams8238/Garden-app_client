@@ -1,11 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import ActionButton from './actionButton';
 import GardenListView from './condensedGarden-listView';
 import './styles/dashboard-allGardens.css';
 
-export default function AllGardensDashboard() {
+export function AllGardensDashboard(props) {
+    const gardens = props.data.map((garden, index) => (
+        <li key={index}>
+            <h3>{garden.name}</h3>
+            <p className="description">
+                {garden.description ? garden.description : garden.location}
+            </p>
+        </li>
+    ))
+
+    console.log(gardens)
+    
     return (
         <div className="all-gardens-content">
             <section>
@@ -13,7 +25,9 @@ export default function AllGardensDashboard() {
                 <ActionButton label="+ New"/>
             </section>
             <ul className="gardens-list-view">
-                <Link to="/oneGarden">
+                {gardens}
+
+                {/* <Link to="/oneGarden">
                     <GardenListView />
                 </Link>
                 <Link to="/oneGarden">
@@ -21,8 +35,14 @@ export default function AllGardensDashboard() {
                 </Link>
                 <Link to="/oneGarden">
                     <GardenListView />
-                </Link>
+                </Link> */}
             </ul>
         </div>
     );
 }
+
+const mapStateToProps = (state, props) => ({
+    data: state.gardens.data
+})
+
+export default connect(mapStateToProps)(AllGardensDashboard)

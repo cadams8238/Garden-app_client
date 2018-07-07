@@ -1,7 +1,8 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import requiresLogin from './requires-login';
+import { getGardensData } from '../actions/userGardens';
 
 import Header from './dashboard-header';
 import AllGardensDashboard from './dashboard-allGardens';
@@ -12,7 +13,7 @@ import './styles/dashboard-template.css';
 export class DashboardTemplate extends React.Component {
 
     componentDidMount() {
-        // this.props.dispatch( fetchDataFromBackEnd )
+        this.props.dispatch(getGardensData());
     }
 
     render() {
@@ -31,13 +32,13 @@ export class DashboardTemplate extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    // const {currentUser} = state.auth;
-    return {
-        data: state.gardens.data,
-        username: state.auth.currentUser.username
-    }
-}
+// const mapStateToProps = state => {
+//     // const {currentUser} = state.auth;
+//     return {
+//         data: state.gardens.data,
+//         username: state.auth.currentUser.username
+//     }
+// }
 
 // requiresLogin()(connect(mapStateToProps)(DashboardTemplate));
-export default requiresLogin()(DashboardTemplate);
+export default requiresLogin()(connect()(DashboardTemplate));
