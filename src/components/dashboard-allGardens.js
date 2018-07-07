@@ -6,39 +6,38 @@ import ActionButton from './actionButton';
 import GardenListView from './condensedGarden-listView';
 import './styles/dashboard-allGardens.css';
 
-export function AllGardensDashboard(props) {
-    const gardens = props.data.map((garden, index) => (
-        <li key={index}>
-            <h3>{garden.name}</h3>
-            <p className="description">
-                {garden.description ? garden.description : garden.location}
-            </p>
-        </li>
-    ))
-    console.log(props.data)
-    console.log(gardens)
+export class AllGardensDashboard extends React.Component {
+    
+    deleteGarden(id) {
+        console.log(id);
+        // props.dispatch( deleteGardenFromDB )
+    }
 
-    return (
-        <div className="all-gardens-content">
-            <section>
-                <h2 className="title">My Gardens</h2>
-                <ActionButton label="+ New"/>
-            </section>
-            <ul className="gardens-list-view">
-                {gardens}
+    render() {
+        const gardens = this.props.data.map((garden, index) => (
+            <GardenListView
+                key={index}
+                id={garden.id}
+                name={garden.name}
+                description={garden.description ?
+                    garden.description : garden.location}
+                whenClicked={id => this.deleteGarden(id)}
+            />
+        ));
 
-                {/* <Link to="/oneGarden">
-                    <GardenListView />
-                </Link>
-                <Link to="/oneGarden">
-                    <GardenListView />
-                </Link>
-                <Link to="/oneGarden">
-                    <GardenListView />
-                </Link> */}
-            </ul>
-        </div>
-    );
+        return (
+            <div className="all-gardens-content">
+                <section>
+                    <h2 className="title">My Gardens</h2>
+                    <ActionButton label="+ New"/>
+                </section>
+                <ul className="gardens-list-view">
+                    {gardens}
+                </ul>
+            </div>
+        );
+    }
+
 }
 
 const mapStateToProps = (state, props) => ({

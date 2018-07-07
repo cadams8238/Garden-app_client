@@ -6,6 +6,7 @@ export default function ActionButton(props) {
         <button
             type="submit"
             className="call-to-action-button"
+            onClick={props.whenClicked}
         >
             {props.label}
         </button>
