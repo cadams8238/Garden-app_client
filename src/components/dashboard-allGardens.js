@@ -2,27 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { deleteGardenFromDB, getGardensData } from '../actions/userGardens';
 import ActionButton from './actionButton';
 import GardenListView from './condensedGarden-listView';
 import './styles/dashboard-allGardens.css';
 
 export class AllGardensDashboard extends React.Component {
-    
     deleteGarden(id) {
-        console.log(id);
-        // props.dispatch( deleteGardenFromDB )
+        console.log(id)
+        this.props.dispatch(deleteGardenFromDB(id));
+        this.props.dispatch(getGardensData());
     }
 
     render() {
         const gardens = this.props.data.map((garden, index) => (
-            <GardenListView
-                key={index}
-                id={garden.id}
-                name={garden.name}
-                description={garden.description ?
-                    garden.description : garden.location}
-                whenClicked={id => this.deleteGarden(id)}
-            />
+            // <GardenListView
+            //     key={index}
+            //     // id={garden.id}
+            //     name={garden.name}
+            //     description={garden.description ?
+            //         garden.description : garden.location}
+            //     // whenClicked={index => this.deleteGarden(index)}
+            // />
+            <li className="condensedGarden" key={index}>
+                <h3><a href={`/garden/${garden.id}`}>{garden.name}</a></h3>
+                <p className="description">{garden.description}</p>
+                <button onClick={() => this.deleteGarden(garden.id)}>Delete</button>
+            </li>
         ));
 
         return (

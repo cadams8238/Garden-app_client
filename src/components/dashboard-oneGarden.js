@@ -3,6 +3,13 @@ import Calendar from './calendar';
 import './styles/dashboard-oneGarden.css';
 
 export default function OneGardenDashboard() {
+    // /garden/:id
+    // componentDidMount() {
+    //     const id = this.props.params
+    //     this.props.dispatch( fetchOneGarden(id) )
+    // }
+
+
     return (
         <div className="all-garden-content">
             <section>
