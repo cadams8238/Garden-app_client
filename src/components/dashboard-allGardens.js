@@ -21,14 +21,6 @@ export class AllGardensDashboard extends React.Component {
 
     render() {
         const gardens = this.props.data.map((garden, index) => (
-            // <GardenListView
-            //     key={index}
-            //     // id={garden.id}
-            //     name={garden.name}
-            //     description={garden.description ?
-            //         garden.description : garden.location}
-            //     // whenClicked={index => this.deleteGarden(index)}
-            // />
             <li className="condensedGarden" key={index}>
                 <h3><a href={`/garden/${garden.id}`}>{garden.name}</a></h3>
                 <p className="description">{garden.description}</p>

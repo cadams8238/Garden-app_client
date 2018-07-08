@@ -37,6 +37,7 @@ export const hideAddGardenForm = () => {
 }
 
 
+
 export const getGardensData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
 
