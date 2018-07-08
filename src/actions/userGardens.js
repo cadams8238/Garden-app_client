@@ -26,6 +26,16 @@ export const deleteGarden = id => ({
     id
 })
 
+export const SHOW_ADD_GARDEN_FORM = 'SHOW_ADD_GARDEN_FORM';
+export const showAddGardenForm = () => ({
+    type: SHOW_ADD_GARDEN_FORM
+})
+
+export const HIDE_ADD_GARDEN_FORM = 'HIDE_ADD_GARDEN_FORM';
+export const hideAddGardenForm = () => {
+    type: HIDE_ADD_GARDEN_FORM
+}
+
 
 export const getGardensData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
