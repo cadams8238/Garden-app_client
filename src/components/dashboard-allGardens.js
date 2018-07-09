@@ -4,17 +4,14 @@ import { connect } from 'react-redux';
 
 import { deleteGardenFromDB, getGardensData, showAddGardenForm } from '../actions/userGardens';
 import ActionButton from './actionButton';
-// import GardenListView from './condensedGarden-listView';
 import AddGardenForm from './addGarden-form';
 
-import './styles/dashboard-allGardens.css';
 import button from './styles/Buttons.module.css';
 import dashboard from './styles/Dashboards.module.css';
 import typography from './styles/Typography.module.css';
 
 export class AllGardensDashboard extends React.Component {
     deleteGarden(id) {
-        // console.log(id)
         this.props.dispatch(deleteGardenFromDB(id));
         this.props.dispatch(getGardensData());
     }

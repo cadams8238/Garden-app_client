@@ -7,7 +7,7 @@ import { required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed } 
 
 import ActionButton from './actionButton';
 import Input from './form-input';
-import './styles/form-login.css';
+import form from './styles/Forms.module.css';
 
 export class Form_login extends React.Component {
     onSubmit(values) {
@@ -18,7 +18,7 @@ export class Form_login extends React.Component {
     render() {
         return (
             <form
-                className="form"
+                className={form.form}
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}

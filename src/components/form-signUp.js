@@ -8,7 +8,9 @@ import { login } from '../actions/auth';
 
 import ActionButton from './actionButton';
 import Input from './form-input';
-import './styles/form-signUp.css';
+
+import form from './styles/Forms.module.css';
+
 
 export class Form_signUp extends React.Component {
     onSubmit(values) {
@@ -23,7 +25,7 @@ export class Form_signUp extends React.Component {
     render() {
         return (
             <form
-                className="form"
+                className={form.form}
                 onSubmit={this.props.handleSubmit(values => {
                     this.onSubmit(values);
                 })}

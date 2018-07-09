@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchOneGardenData } from '../actions/userOneGarden';
 import { fetchWeatherData } from '../actions/weatherData';
-import './styles/dashboard-oneGarden.css';
+
 import dashboard from './styles/Dashboards.module.css';
 import typography from './styles/Typography.module.css';
 

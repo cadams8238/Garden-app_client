@@ -18,7 +18,7 @@ export function Header(props) {
                     onClick={() => logOut()}
                     className={styles.signOut}
                 >
-                    SIGN OUT
+                    Sign Out
                 </button>
             </nav>
         </header>

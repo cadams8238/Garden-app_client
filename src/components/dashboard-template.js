@@ -7,7 +7,6 @@ import { getGardensData } from '../actions/userGardens';
 import Header from './dashboard-header';
 import AllGardensDashboard from './dashboard-allGardens';
 import OneGardenDashboard from './dashboard-oneGarden';
-import Footer from './dashboard-footer';
 import './styles/dashboard-template.css';
 
 export class DashboardTemplate extends React.Component {
@@ -21,24 +20,13 @@ export class DashboardTemplate extends React.Component {
             <div>
                 <Header />
                 <section>
-                    {/* <Switch> */}
-                        <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
-                        <Route path="/dashboard/oneGarden/:id" component={OneGardenDashboard} />
-                    {/* </Switch> */}
+                    <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
+                    <Route path="/dashboard/oneGarden/:id" component={OneGardenDashboard} />
                 </section>
-                <Footer />
+                <img></img>
             </div>
         );
     }
 }
 
-// const mapStateToProps = state => {
-//     // const {currentUser} = state.auth;
-//     return {
-//         data: state.gardens.data,
-//         username: state.auth.currentUser.username
-//     }
-// }
-
-// requiresLogin()(connect(mapStateToProps)(DashboardTemplate));
 export default requiresLogin()(connect()(DashboardTemplate));

@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 import Form_signUp from './form-signUp';
 import Form_login from './form-login';
-import './styles/form-landingPage.css';
+
 import styles from './styles/Logo.module.css';
 
 

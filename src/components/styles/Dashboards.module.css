@@ -11,13 +11,20 @@ ul.gardensListView {
 li.condensedGarden {
     border: 1px black solid;
     margin-bottom: 20px;
-    padding: 5px 10px;
+    padding: 5px 20px;
 }
+
+/* li.condensedGarden:nth-child(1) {
+    padding-top: 20px;
+} */
 
 h3 {
     font-weight: 400;
+    text-transform: capitalize;
+
 }
 
 p.description {
     font-style: italic;
+    text-transform: capitalize;
 }
