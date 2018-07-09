@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #EDEDCB;
+    background-color: white;
 }
 
 /* .navbar::after {
@@ -11,18 +11,18 @@
     display: block;
 } */
 
-h1.logo {
+/* h1.logo {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.5em;
     float: left;
     padding-left: 10%;
-}
+} */
 
-button.logOut {
+/* button.logOut {
     float: right;
     margin-top: 25px;
     margin-right: 10%;
     text-align: center;
     border: none;
-}
+} */

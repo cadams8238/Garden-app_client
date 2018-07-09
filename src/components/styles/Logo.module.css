@@ -1,0 +1,15 @@
+.formLogo {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.dashboardLogo {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    float: left;
+    padding-left: 10%;
+}

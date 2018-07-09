@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import './styles/dashboard-header.css';
+import styles from './styles/Buttons.module.css';
+import logo from './styles/Logo.module.css';
 
 export function Header(props) {
     const logOut = () => {
@@ -11,10 +13,10 @@ export function Header(props) {
     return (
         <header>
             <nav className="navbar">
-                <h1 className="logo">Phytochor</h1>
+                <h1 className={logo.dashboardLogo}>Phytochor</h1>
                 <button
                     onClick={() => logOut()}
-                    className="logOut"
+                    className={styles.signOut}
                 >
                     SIGN OUT
                 </button>

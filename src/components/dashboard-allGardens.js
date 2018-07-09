@@ -6,7 +6,11 @@ import { deleteGardenFromDB, getGardensData, showAddGardenForm } from '../action
 import ActionButton from './actionButton';
 // import GardenListView from './condensedGarden-listView';
 import AddGardenForm from './addGarden-form';
+
 import './styles/dashboard-allGardens.css';
+import button from './styles/Buttons.module.css';
+import dashboard from './styles/Dashboards.module.css';
+import typography from './styles/Typography.module.css';
 
 export class AllGardensDashboard extends React.Component {
     deleteGarden(id) {
@@ -21,21 +25,28 @@ export class AllGardensDashboard extends React.Component {
 
     render() {
         const gardens = this.props.data.map((garden, index) => (
-            <li className="condensedGarden" key={index}>
+            <li className={dashboard.condensedGarden} key={index}>
                 <h3>
                     <Link to={`/dashboard/oneGarden/${garden.id}`}>
                         {garden.name}
                     </Link>
                 </h3>
-                <p className="description">{garden.description}</p>
-                <button onClick={() => this.deleteGarden(garden.id)}>Delete</button>
+                {/* <p className="description">{garden.description}</p> */}
+                <p className="description">{garden.location}</p>
+
+                <button
+                    className={button.delete}
+                    onClick={() => this.deleteGarden(garden.id)}
+                >
+                    Delete
+                </button>
             </li>
         ));
 
         return (
-            <div className="all-gardens-content">
+            <div className={dashboard.mainContent}>
                 <section>
-                    <h2 className="title">My Gardens</h2>
+                    <h2 className={typography.heading}>My Gardens</h2>
                     {!this.props.adding ?
                         <ActionButton
                             label="+ New"
@@ -44,7 +55,7 @@ export class AllGardensDashboard extends React.Component {
                     }
 
                 </section>
-                <ul className="gardens-list-view">
+                <ul className={dashboard.gardensListView}>
                     {gardens}
                 </ul>
             </div>
