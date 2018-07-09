@@ -6,32 +6,32 @@ import {
 
 
 const initialState = {
-    garden: null,
+    garden: {},
     loading: false,
     error: null
 }
 
 const fetchOneGarden = (state = initialState, action) => {
     if(action.type === FETCH_ONE_GARDEN_REQUEST) {
-        return ({
+        return {
             ...state,
             loading: true,
             error: null
-        });
+        };
     }
     else if(action.type === FETCH_ONE_GARDEN_SUCCESS) {
-        return ({
+        return {
             ...state,
-            loading: false,
-            data: action.garden
-        });
+            garden: action.garden,
+            loading: false
+        };
     }
     else if(action.type === FETCH_ONE_GARDEN_ERROR) {
-        return ({
+        return {
             ...state,
             loading: false,
             error: action.error
-        });
+        };
     }
     return state;
 }

@@ -3,24 +3,24 @@ import { normalizeResponseErrors } from './utils';
 import { SubmissionError } from 'redux-form';
 
 export const FETCH_ONE_GARDEN_REQUEST = 'FETCH_ONE_GARDEN_REQUEST';
-export const fetchOneGardensRequest = () => ({
+export const fetchOneGardenRequest = () => ({
     type: FETCH_ONE_GARDEN_REQUEST
 })
 
 export const FETCH_ONE_GARDEN_SUCCESS = 'FETCH_ONE_GARDEN_SUCCESS';
-export const fetchOneGardensSuccess = garden => ({
+export const fetchOneGardenSuccess = garden => ({
     type: FETCH_ONE_GARDEN_SUCCESS,
     garden
 })
 
 export const FETCH_ONE_GARDEN_ERROR = 'FETCH_ONE_GARDEN_ERROR';
-export const fetchOneGardensError = error => ({
+export const fetchOneGardenError = error => ({
     type: FETCH_ONE_GARDEN_ERROR,
     error
 })
 
 
-export const getOneGardenData = (id) => (dispatch, getState) => {
+export const fetchOneGardenData = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
 
     dispatch(fetchOneGardenRequest());
@@ -32,8 +32,14 @@ export const getOneGardenData = (id) => (dispatch, getState) => {
             }
         })
         .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then(data => dispatch(fetchOneGardenSuccess(data)))
+        .then(res => {
+            // console.log(res.json())
+            return res.json()
+        })
+        .then(data => {
+            dispatch(fetchOneGardenSuccess(data))
+            // console.log(data)
+        })
         .catch(err => dispatch(fetchOneGardenError(err)))
     );
 }

@@ -53,7 +53,7 @@ export class AllGardensDashboard extends React.Component {
 
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
     data: state.gardens.data,
     adding: state.gardens.adding
 })

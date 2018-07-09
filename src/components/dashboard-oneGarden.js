@@ -1,21 +1,23 @@
 import React from 'react';
 import Calendar from './calendar';
+import { connect } from 'react-redux';
+import { fetchOneGardenData } from '../actions/userOneGarden';
 import './styles/dashboard-oneGarden.css';
 
-export default class OneGardenDashboard extends React.Component {
-    // /dashboard/garden/:id
-    // componentDidMount() {
-    //     const id = this.props.params
-    //     this.props.dispatch( fetchOneGarden(id) )
-    // }
+export class OneGardenDashboard extends React.Component {
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        this.props.dispatch(fetchOneGardenData(id))
+        // this.props.dispatch( fetchWeatherData(location) )
+    }
 
     render() {
         return (
             <div className="all-garden-content">
                 <section>
-                    <h2 className="garden-name">Name of Garden</h2>
-                    <p>Location</p>
-                    <p>Description</p>
+                    <h2 className="garden-name">{this.props.garden.name}</h2>
+                    <p>{this.props.garden.location}</p>
+                    <p>{this.props.garden.description}</p>
                 </section>
                 <form>
                     <h4 className="tasks">Tasks for Today:</h4>
@@ -33,5 +35,13 @@ export default class OneGardenDashboard extends React.Component {
 
             </div>
         );
+
     }
 }
+
+const mapStateToProps = (state) => ({
+    garden: state.oneGarden.garden
+})
+
+
+export default connect(mapStateToProps)(OneGardenDashboard)
