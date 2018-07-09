@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+
 import Form_signUp from './form-signUp';
 import Form_login from './form-login';
 import './styles/form-landingPage.css';
@@ -22,14 +23,6 @@ export function FormLandingPage(props) {
             <main>
                 <Route exact path="/auth/signUp" component={Form_signUp} />
                 <Route exact path="/auth/login" component={Form_login} />
-                {/* <Link to="/auth/login">
-                    login
-                </Link>
-
-                <Link to="/auth/signUp">
-                    sign up
-                </Link> */}
-
             </main>
         </div>
     )

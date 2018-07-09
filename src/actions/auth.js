@@ -57,7 +57,7 @@ export const login = (username, password) => dispatch => {
             })
         })
         .then(res => {
-            console.log(res)
+            // console.log(res)
             return normalizeResponseErrors(res)
         })
         .then(res => res.json())

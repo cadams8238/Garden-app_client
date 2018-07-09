@@ -23,7 +23,7 @@ export class DashboardTemplate extends React.Component {
                 <section>
                     {/* <Switch> */}
                         <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
-                        <Route exact path="/dashboard/oneGarden" component={OneGardenDashboard} />
+                        <Route path="/dashboard/oneGarden/:id" component={OneGardenDashboard} />
                     {/* </Switch> */}
                 </section>
                 <Footer />

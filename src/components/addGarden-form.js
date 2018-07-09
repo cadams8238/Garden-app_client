@@ -7,15 +7,14 @@ import { required, notEmpty } from '../validators';
 
 
 export class AddGardenForm extends React.Component {
-    // onSubmit(values) {
-    //     this.props.dispatch( addGarden(values) )
-    // }
+
     hideForm() {
         this.props.dispatch(hideAddGardenForm());
     }
 
-    addNew() {
-        // this.props.dispatch( addGarden(values) )
+    addNew(values) {
+        // console.log(values)
+        this.props.dispatch(addGarden(values))
     }
 
     render() {

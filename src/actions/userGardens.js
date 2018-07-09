@@ -32,10 +32,25 @@ export const showAddGardenForm = () => ({
 })
 
 export const HIDE_ADD_GARDEN_FORM = 'HIDE_ADD_GARDEN_FORM';
-export const hideAddGardenForm = () => {
+export const hideAddGardenForm = () => ({
     type: HIDE_ADD_GARDEN_FORM
-}
+})
 
+export const ADD_GARDEN_REQUEST = 'ADD_GARDEN_REQUEST';
+export const addGardenRequest = () => ({
+    type: ADD_GARDEN_REQUEST
+})
+
+export const ADD_GARDEN_SUCCESS = 'ADD_GARDEN_SUCCESS';
+export const addGardenSuccess = () => ({
+    type: ADD_GARDEN_SUCCESS
+})
+
+export const ADD_GARDEN_ERROR = 'ADD_GARDEN_ERROR'
+export const addGardenError = error => ({
+    type: ADD_GARDEN_ERROR,
+    error
+})
 
 
 export const getGardensData = () => (dispatch, getState) => {
@@ -75,4 +90,26 @@ export const deleteGardenFromDB = id => (dispatch, getState) => {
             )
         })
     )
+}
+
+export const addGarden = gardenInfo => (dispatch, getState) => {
+    console.log(JSON.stringify(gardenInfo));
+    const authToken = getState().auth.authToken;
+
+    return (
+        fetch(`${API_BASE_URL}/garden`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${authToken}`
+            },
+            body: JSON.stringify(gardenInfo)
+        })
+        .then(res => {
+            console.log(res)
+            normalizeResponseErrors(res)
+        })
+        .then(res => res.json())
+        .then(() => dispatch(addGardenSuccess()))
+        .catch(err => dispatch(addGardenError(err)))
+    );
 }

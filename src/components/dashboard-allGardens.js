@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 
 import { deleteGardenFromDB, getGardensData, showAddGardenForm } from '../actions/userGardens';
 import ActionButton from './actionButton';
-import GardenListView from './condensedGarden-listView';
+// import GardenListView from './condensedGarden-listView';
 import AddGardenForm from './addGarden-form';
 import './styles/dashboard-allGardens.css';
 
 export class AllGardensDashboard extends React.Component {
     deleteGarden(id) {
-        console.log(id)
+        // console.log(id)
         this.props.dispatch(deleteGardenFromDB(id));
         this.props.dispatch(getGardensData());
     }
@@ -22,7 +22,11 @@ export class AllGardensDashboard extends React.Component {
     render() {
         const gardens = this.props.data.map((garden, index) => (
             <li className="condensedGarden" key={index}>
-                <h3><a href={`/garden/${garden.id}`}>{garden.name}</a></h3>
+                <h3>
+                    <Link to={`/dashboard/oneGarden/${garden.id}`}>
+                        {garden.name}
+                    </Link>
+                </h3>
                 <p className="description">{garden.description}</p>
                 <button onClick={() => this.deleteGarden(garden.id)}>Delete</button>
             </li>

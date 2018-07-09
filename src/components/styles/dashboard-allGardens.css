@@ -12,3 +12,17 @@ ul.gardens-list-view {
     list-style-type: none;
     padding: 0;
 }
+
+li.condensedGarden {
+    border: 1px black solid;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+p.description {
+    font-style: italic;
+}
