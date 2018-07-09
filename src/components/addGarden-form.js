@@ -3,7 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 import { addGarden, hideAddGardenForm, getGardensData } from '../actions/userGardens';
 import ActionButton from './actionButton';
 import Input from './form-input';
-import { required, notEmpty } from '../validators';
+import { required, notEmpty, isFiveDigits } from '../validators';
 
 
 export class AddGardenForm extends React.Component {
@@ -13,7 +13,7 @@ export class AddGardenForm extends React.Component {
     }
 
     addNew(values) {
-        // console.log(values)
+        console.log(values)
         this.props.dispatch(addGarden(values));
         this.hideForm();
         this.props.dispatch(getGardensData())
@@ -61,7 +61,7 @@ export class AddGardenForm extends React.Component {
                         name="zipcode"
                         label="Zip Code:"
                         component={Input}
-                        validate={[required, notEmpty]}
+                        validate={[required, notEmpty, isFiveDigits]}
                         element="number"
                     />
 

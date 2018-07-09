@@ -1,5 +1,5 @@
 import React from 'react';
-import Calendar from './calendar';
+// import Calendar from './calendar';
 import { connect } from 'react-redux';
 import { fetchOneGardenData } from '../actions/userOneGarden';
 import { fetchWeatherData } from '../actions/weatherData';
@@ -9,7 +9,7 @@ export class OneGardenDashboard extends React.Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         this.props.dispatch(fetchOneGardenData(id))
-        this.props.dispatch(fetchWeatherData())
+            .then(data => this.props.dispatch(fetchWeatherData(data.zipcode)))
     }
 
     render() {

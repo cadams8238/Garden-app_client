@@ -29,10 +29,11 @@ const isRaining = (data, dispatch) => {
         dispatch(fetchWeatherDataSuccess(false));
 }
 
-export const fetchWeatherData = () => dispatch => {
+export const fetchWeatherData = (zipcode) => dispatch => {
+    // console.log(zipcode);
     dispatch(fetchWeatherDataRequest)
     return (
-        fetch(`${API_BASE_URL}/weatherData`)
+        fetch(`${API_BASE_URL}/weatherData/${zipcode}`)
             .then(response => normalizeResponseErrors(response))
             .then(res => res.json())
             .then(jsonData => {

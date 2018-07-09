@@ -8,6 +8,9 @@ export const lessThanSeventyTwoChar = value => value.length <= 72 ? undefined : 
 
 export const isTrimmed = value => value.trim() === value ? undefined : 'Cannot start or end with whitespace';
 
+// export const isNumber = value => value === Number(value) ? undefined : 'Must be a number';
+
+export const isFiveDigits = value => value.toString().length === 5 ? undefined : 'Must be 5 digits';
 
 
 
