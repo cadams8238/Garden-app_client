@@ -5,6 +5,7 @@ const initialState = {
 }
 
 const weatherDataReducer = (state = initialState, action) => {
+    // console.log(action)
     if(action.type === 'FETCH_WEATHER_DATA_REQUEST') {
         return {
             ...state,

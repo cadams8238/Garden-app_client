@@ -13,15 +13,20 @@ export class OneGardenDashboard extends React.Component {
     }
 
     render() {
-        console.log(this.props.needsWatering)
+        // console.log(this.props.needsWatering)
+        const watering = this.props.needsWatering ?
+            <p>Water Garden</p> :
+            <p>No need to water today. Nature's got it.</p>;
+
         return (
             <div className="all-garden-content">
                 <section>
                     <h2 className="garden-name">{this.props.garden.name}</h2>
-                    <p>{this.props.garden.location}</p>
-                    <p>{this.props.garden.description}</p>
+                    <p>Location: {this.props.garden.location}</p>
+                    <p>Description: {this.props.garden.description}</p>
                 </section>
-                <form>
+                {watering}
+                {/* <form>
                     <h4 className="tasks">Tasks for Today:</h4>
                     <ul className="to-do-list">
                         <li>
@@ -33,7 +38,7 @@ export class OneGardenDashboard extends React.Component {
                             <label htmlFor="checkbox">Water Garden</label>
                         </li>
                     </ul>
-                </form>
+                </form> */}
             </div>
         );
 

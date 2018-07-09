@@ -100,7 +100,8 @@ export const addGarden = gardenInfo => (dispatch, getState) => {
         fetch(`${API_BASE_URL}/garden`, {
             method: 'POST',
             headers: {
-                Authorization: `Bearer ${authToken}`
+                Authorization: `Bearer ${authToken}`,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(gardenInfo)
         })
