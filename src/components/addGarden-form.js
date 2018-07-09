@@ -1,6 +1,6 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { addGarden, hideAddGardenForm } from '../actions/userGardens';
+import { addGarden, hideAddGardenForm, getGardensData } from '../actions/userGardens';
 import ActionButton from './actionButton';
 import Input from './form-input';
 import { required, notEmpty } from '../validators';
@@ -14,7 +14,9 @@ export class AddGardenForm extends React.Component {
 
     addNew(values) {
         // console.log(values)
-        this.props.dispatch(addGarden(values))
+        this.props.dispatch(addGarden(values));
+        this.hideForm();
+        this.props.dispatch(getGardensData())
     }
 
     render() {
@@ -44,7 +46,6 @@ export class AddGardenForm extends React.Component {
                         name="description"
                         label="Description:"
                         component={Input}
-                        validate={[required, notEmpty]}
                     />
 
                     <Field
