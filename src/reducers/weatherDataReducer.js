@@ -1,5 +1,5 @@
 const initialState = {
-    data: [],
+    needsWatering: null,
     loading: false,
     error: null
 }
@@ -15,7 +15,7 @@ const weatherDataReducer = (state = initialState, action) => {
         return {
             ...state,
             loading: false,
-            data: action.data
+            needsWatering: action.needsWatering
         }
     }
     else if(action.type === 'FETCH_WEATHER_DATA_ERROR') {

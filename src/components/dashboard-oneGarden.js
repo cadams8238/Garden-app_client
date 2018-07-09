@@ -2,16 +2,18 @@ import React from 'react';
 import Calendar from './calendar';
 import { connect } from 'react-redux';
 import { fetchOneGardenData } from '../actions/userOneGarden';
+import { fetchWeatherData } from '../actions/weatherData';
 import './styles/dashboard-oneGarden.css';
 
 export class OneGardenDashboard extends React.Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         this.props.dispatch(fetchOneGardenData(id))
-        // this.props.dispatch( fetchWeatherData(location) )
+        this.props.dispatch(fetchWeatherData())
     }
 
     render() {
+        console.log(this.props.needsWatering)
         return (
             <div className="all-garden-content">
                 <section>
@@ -32,7 +34,6 @@ export class OneGardenDashboard extends React.Component {
                         </li>
                     </ul>
                 </form>
-
             </div>
         );
 
@@ -40,7 +41,8 @@ export class OneGardenDashboard extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    garden: state.oneGarden.garden
+    garden: state.oneGarden.garden,
+    needsWatering: state.weather.needsWatering
 })
 
 

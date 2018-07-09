@@ -8,9 +8,9 @@ const fetchWeatherDataRequest = () => ({
 })
 
 export const FETCH_WEATHER_DATA_SUCCESS = 'FETCH_WEATHER_DATA_SUCCESS';
-const fetchWeatherDataSuccess = data => ({
+const fetchWeatherDataSuccess = needsWatering => ({
     type: FETCH_WEATHER_DATA_SUCCESS,
-    data
+    needsWatering
 })
 
 export const FETCH_WEATHER_DATA_ERROR = 'FETCH_WEATHER_DATA_ERROR';
@@ -20,13 +20,25 @@ const fetchWeatherDataError = error => ({
 })
 
 
+const isRaining = (data, dispatch) => {
+    const jsonKeys = Object.keys(data);
+    const rain = jsonKeys.filter(key => key === 'rain');
+
+    return rain.length !== 0 ?
+        dispatch(fetchWeatherDataSuccess(true)) :
+        dispatch(fetchWeatherDataSuccess(false));
+}
+
 export const fetchWeatherData = () => dispatch => {
     dispatch(fetchWeatherDataRequest)
     return (
         fetch(`${API_BASE_URL}/weatherData`)
             .then(response => normalizeResponseErrors(response))
             .then(res => res.json())
-            .then(jsonData => dispatch(fetchWeatherDataSuccess(jsonData.list)))
+            .then(jsonData => {
+                console.log(jsonData);
+                return isRaining(jsonData);
+            })
             .catch(err => dispatch(fetchWeatherDataError(err)))
     );
 }
