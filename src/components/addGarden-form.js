@@ -38,6 +38,15 @@ export class AddGardenForm extends React.Component {
                         component={Input}
                         validate={[required, notEmpty]}
                     />
+
+                    <Field
+                        id="description"
+                        name="description"
+                        label="Description:"
+                        component={Input}
+                        validate={[required, notEmpty]}
+                    />
+
                     <Field
                         id="location"
                         name="location"
@@ -45,12 +54,14 @@ export class AddGardenForm extends React.Component {
                         component={Input}
                         validate={[required, notEmpty]}
                     />
+
                     <Field
-                        id="description"
-                        name="description"
-                        label="Description:"
+                        id="zipcode"
+                        name="zipcode"
+                        label="Zip Code:"
                         component={Input}
                         validate={[required, notEmpty]}
+                        element="number"
                     />
 
                     <ActionButton
