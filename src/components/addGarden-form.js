@@ -5,6 +5,8 @@ import ActionButton from './actionButton';
 import Input from './form-input';
 import { required, notEmpty, isFiveDigits } from '../validators';
 
+import form from './styles/Forms.module.css';
+
 
 export class AddGardenForm extends React.Component {
 
@@ -22,14 +24,14 @@ export class AddGardenForm extends React.Component {
     render() {
         return (
             <form
-                className="add-form"
+                className={form.addForm}
                 // onSubmit={this.props.handleSubmit(values =>
                 //     this.onSubmit(values)
                 // )}
             >
                 <fieldset>
                     <legend
-                        className="add-new-title"
+                        className={form.addNewTitle}
                     >
                         Add New Garden
                     </legend>

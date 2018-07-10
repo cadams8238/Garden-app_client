@@ -18,13 +18,25 @@ li.condensedGarden {
     padding-top: 20px;
 } */
 
-h3 {
+.subheading {
     font-weight: 400;
     text-transform: capitalize;
-
 }
 
-p.description {
+.link:link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:visited {
+    color: grey;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+p.location {
     font-style: italic;
     text-transform: capitalize;
 }

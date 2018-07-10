@@ -23,13 +23,16 @@ export class AllGardensDashboard extends React.Component {
     render() {
         const gardens = this.props.data.map((garden, index) => (
             <li className={dashboard.condensedGarden} key={index}>
-                <h3>
-                    <Link to={`/dashboard/oneGarden/${garden.id}`}>
+                <h3 className={dashboard.subheading}>
+                    <Link
+                        className={dashboard.link}
+                        to={`/dashboard/oneGarden/${garden.id}`}
+                    >
                         {garden.name}
                     </Link>
                 </h3>
                 {/* <p className="description">{garden.description}</p> */}
-                <p className="description">{garden.location}</p>
+                <p className={dashboard.location}>{garden.location}</p>
 
                 <button
                     className={button.delete}

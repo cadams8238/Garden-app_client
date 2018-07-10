@@ -7,7 +7,6 @@ import { getGardensData } from '../actions/userGardens';
 import Header from './dashboard-header';
 import AllGardensDashboard from './dashboard-allGardens';
 import OneGardenDashboard from './dashboard-oneGarden';
-import './styles/dashboard-template.css';
 
 export class DashboardTemplate extends React.Component {
 
