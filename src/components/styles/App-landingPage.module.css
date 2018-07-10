@@ -1,0 +1,81 @@
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    display: block;
+    height: 60px;
+}
+
+.navLink {
+    float: right;
+    margin: 15px;
+}
+
+.landingPageImg {
+    width: 100%;
+    height: 750px;
+    background: url("../../images/mobileLandingPage.svg") no-repeat top center;
+}
+
+.feature img,
+.feature p {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.feature p {
+    margin-bottom: 90px;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.flexGrid {
+    display: block;
+}
+
+.featurePage {
+    margin: 150px 0;
+}
+
+@media only screen and (min-width: 640px) {
+    .flexGrid {
+        display: flex;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .landingPageImg {
+        background: url("../../images/landingPage.svg") no-repeat top center;
+    }
+}
+
+/******* GRID **************/
+/* .column3, .column4,
+.column6, .column12 {
+  float: left;
+  padding: 0 1.04166666%;
+  MOBILE DEFAULT
+  width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .column3 {
+    width: 25%;
+  }
+
+  .column4 {
+    width: 33.333333%
+  }
+
+  .column6 {
+    width: 50%;
+  }
+
+  .column12 {
+    width: 100%;
+  }
+} */
