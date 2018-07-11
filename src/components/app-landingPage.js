@@ -19,16 +19,18 @@ export default function Home() {
                         label="Sign up"
                     />
                 </Link>
-                <Link to="/auth/login" className={styles.navLink}>
+                <Link to="/auth/login" className={[styles.navLink, styles.link].join(' ')}>
                     Login
                 </Link>
             </nav>
+
             <section>
                 <div className={[styles.landingPageImg, styles.landingPageText].join(' ')}>
                     <h1>Phytochor</h1>
                     <p>Know when to water your garden based on the weather</p>
                 </div>
             </section>
+
             <section className={[styles.flexGrid, styles.featurePage].join(' ')}>
                 <div className={[styles.feature, styles.col].join(' ')}>
                     <img
@@ -68,7 +70,7 @@ export default function Home() {
                                 label="Sign up"
                             />
                         </Link>
-                        <Link to="/auth/login">
+                        <Link to="/auth/login" className={styles.loginLink}>
                             <p>Already signed up? Login here</p>
                         </Link>
                     </div>
@@ -79,12 +81,10 @@ export default function Home() {
                         Login with the following credientials to browse,
                         no strings attached.
                     </p>
-                    <p>
-                        <span>Username:</span> User
-                    </p>
-                    <p>
-                        <span>Password:</span> TestUser
-                    </p>
+                    <p>Username:</p>
+                    <p>User</p>
+                    <p>Password:</p>
+                    <p>TestUser</p>
                 </div>
             </section>
         </div>

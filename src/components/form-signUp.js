@@ -27,7 +27,7 @@ export class Form_signUp extends React.Component {
             <form
                 className={form.form}
                 onSubmit={this.props.handleSubmit(values => {
-                    this.onSubmit(values);
+                    return this.onSubmit(values);
                 })}
             >
                 <fieldset>
@@ -66,7 +66,7 @@ export class Form_signUp extends React.Component {
                     <ActionButton label="Submit"/>
 
                     <p>
-                        <Link to="/auth/login">
+                        <Link to="/auth/login" className={form.link}>
                             Already registered? Login here
                         </Link>
                     </p>

@@ -4,10 +4,12 @@ import { clearAuth } from '../actions/auth';
 import './styles/dashboard-header.css';
 import styles from './styles/Buttons.module.css';
 import logo from './styles/Logo.module.css';
+import {clearAuthToken} from '../local-storage';
 
 export function Header(props) {
     const logOut = () => {
         props.dispatch(clearAuth());
+        clearAuthToken();
     }
 
     return (

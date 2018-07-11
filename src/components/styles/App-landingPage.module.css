@@ -11,16 +11,27 @@
     margin: 15px;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding-top: 4px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
 .landingPageImg {
     /* width: 100vw; */
     height: 100vh;
     background: url("../../images/mobileLandingPage.svg") no-repeat top center;
     background-size: cover;
-    text-align: center;
 }
 
 .landingPageImg h1 {
     padding-top: 60%;
+    text-align: center;
 
 }
 
@@ -28,6 +39,9 @@
     font-style: italic;
     font-size: 1.5em;
     margin-top: 5px;
+    padding: 0 50px;
+    text-align: center;
+
 }
 
 .landingPageText h1 {
@@ -56,22 +70,11 @@
 
 .greenBkgrd {
     background-color: #659003;
-    border: 1px solid black;
-}
-
-.greenBkgrd::after {
-    content: "";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
 }
 
 .beetImg {
     width: 80%;
     margin-top: 80px;
-    border: 1px solid black;
-
 }
 
 .beetText {
@@ -79,33 +82,56 @@
     position: relative;
     top: -450px;
     left: 40%;
-    border: 1px solid black;
 }
 
 .beetText h2 {
     font-family: 'Playfair display', serif;
     color: white;
-    border: 1px solid black;
     margin: 0;
 }
 
 .beetText h2:nth-child(2) {
     margin-bottom: 125px;
-    /* border: 1px solid black; */
+}
+
+.loginLink {
+    text-decoration: none;
+    color: black;
+    font-size: .75em;
+}
+
+.loginLink:hover {
+    text-decoration: underline;
 }
 
 
 .demoUser {
-    border: 1px solid black;
-    width: 70%;
+    /* width: 50%; */
     margin: 0 auto;
     font-size: 1.25em;
+    position: relative;
+    top: -140px;
+    max-width: 70%;
 }
 
-.demoUser span {
+.demoUser p:first-child {
+    margin-bottom: 35px;
+}
+
+/* selects just the headings for demo user */
+.demoUser p:nth-child(even) {
     font-style: italic;
     text-transform: uppercase;
     display: block;
+}
+
+/* selects values of username and password */
+.demoUser p:nth-child(3),
+.demoUser p:nth-child(5) {
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 35px;
+    font-weight: 600;
 }
 
 
@@ -152,6 +178,7 @@
 @media only screen and (min-width: 768px) {
     .flexGrid {
         display: flex;
+        justify-content: space-between;
     }
 
     .col {
@@ -164,7 +191,6 @@
         height: 100vh;
         background: url("../../images/landingPage.svg") no-repeat top center;
         background-size: cover;
-        border: 1px black solid;
     }
 
     .landingPageImg h1 {
@@ -172,7 +198,7 @@
     }
 
     .featurePage {
-        margin: 110px 0;
+        margin: 150px 0;
     }
 
     .beetText {
@@ -181,6 +207,12 @@
 
     .beetText h2 {
         font-size: 3.5em;
+    }
+
+    .demoUser {
+        top: 50px;
+        margin: 0 25px;
+        padding-right: 40px;
     }
 }
 
@@ -192,5 +224,17 @@
 
     .landingPageImg h1 {
         padding-top: 20%;
+    }
+
+
+}
+
+@media only screen and (min-width: 1100px) {
+    .demoUser {
+        top: 140px;
+    }
+
+    .beetText {
+        top: -440px;
     }
 }

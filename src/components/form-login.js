@@ -44,7 +44,7 @@ export class Form_login extends React.Component {
                     <ActionButton label="Submit"/>
 
                     <p>
-                        <Link to="/auth/signUp">
+                        <Link to="/auth/signUp" className={form.link}>
                             Haven't registered? Sign up here
                         </Link>
                     </p>

@@ -6,7 +6,7 @@ import Form_signUp from './form-signUp';
 import Form_login from './form-login';
 
 import styles from './styles/Logo.module.css';
-
+import form from './styles/Forms.module.css';
 
 export function FormLandingPage(props) {
 
@@ -17,7 +17,7 @@ export function FormLandingPage(props) {
     }
 
     return (
-        <div>
+        <div className={form.bkgrdImg}>
             <header>
                 <h1 className={styles.formLogo}>Phytochor</h1>
             </header>

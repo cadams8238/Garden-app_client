@@ -13,7 +13,7 @@ export const registerUser = user => dispatch => {
         })
         .then(res => {
             console.log(res)
-            normalizeResponseErrors(res)
+            return normalizeResponseErrors(res)
         })
         .then(res => {
             // console.log(res.json())
@@ -21,8 +21,10 @@ export const registerUser = user => dispatch => {
         }
         )
         .catch(err => {
+            console.log(err);
             const { reason, message, location } = err;
-            if(reason === 'VaildationError') {
+            if(reason === 'ValidationError') {
+
                 return Promise.reject(
                     new SubmissionError({
                         [location]: message
