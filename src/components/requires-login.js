@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+
 export default () => Component => {
     function RequiresLogin(props) {
         const {
@@ -20,9 +21,6 @@ export default () => Component => {
 
         return <Component {...passThroughProps} />;
     }
-
-    // const displayName = Component.displayName || Component.name || 'Component';
-    // RequiresLogin.displayName = `RequiresLogin(${displayName})`;
 
     const mapStateToProps = (state, props) => ({
         authenticating: state.auth.loading,

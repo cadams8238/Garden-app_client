@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import ActionButton from './actionButton';
 import styles from './styles/App-landingPage.module.css';
-
 import location from '../images/location.svg';
 import watering from '../images/watering.svg';
 import thumb from '../images/thumb.svg';
@@ -12,23 +12,29 @@ import beet from '../images/beet.svg';
 export default function Home() {
 
     return (
-        <div>
-            <nav className={styles.navbar}>
-                <Link to="/auth/signUp" className={styles.navLink}>
-                    <ActionButton
-                        label="Sign up"
-                    />
+        <React.Fragment>
+            <nav role="navigation"
+                className={styles.navbar}
+            >
+                <Link to="/auth/signUp"
+                    className={styles.navLink}
+                >
+                    <ActionButton label="Sign up" />
                 </Link>
-                <Link to="/auth/login" className={[styles.navLink, styles.link].join(' ')}>
+                <Link to="/auth/login"
+                    className={[styles.navLink, styles.link].join(' ')}
+                >
                     Login
                 </Link>
             </nav>
 
             <section>
-                <div className={[styles.landingPageImg, styles.landingPageText].join(' ')}>
+                <header role="banner"
+                    className={[styles.landingPageImg, styles.landingPageText].join(' ')}
+                >
                     <h1>Phytochor</h1>
                     <p>Know when to water your garden based on the weather</p>
-                </div>
+                </header>
             </section>
 
             <section className={[styles.flexGrid, styles.featurePage].join(' ')}>
@@ -54,6 +60,7 @@ export default function Home() {
                     <p>Have a green thumb? Create multiple gardens.</p>
                 </div>
             </section>
+
             <section className={[styles.flexGrid, styles.greenBkgrd].join(' ')}>
                 <div className={styles.col}>
                     <img
@@ -87,6 +94,6 @@ export default function Home() {
                     <p>TestUser</p>
                 </div>
             </section>
-        </div>
+        </React.Fragment>
     );
 }

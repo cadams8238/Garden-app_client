@@ -5,7 +5,6 @@ import { reduxForm, Field } from 'redux-form';
 import { required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed } from '../validators';
 import { registerUser } from '../actions/users';
 import { login } from '../actions/auth';
-
 import ActionButton from './actionButton';
 import Input from './form-input';
 
@@ -16,19 +15,21 @@ export class Form_signUp extends React.Component {
     onSubmit(values) {
         const { username, password } = values;
         const user = {username, password};
-        // console.log(user);
+
         return this.props
             .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(login(username, password)));
+            .then(() => this.props.dispatch(
+                login(username, password)
+            ));
     }
 
     render() {
         return (
             <form
                 className={form.form}
-                onSubmit={this.props.handleSubmit(values => {
-                    return this.onSubmit(values);
-                })}
+                onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values)
+                )}
             >
                 <fieldset>
                     <legend>Sign up</legend>

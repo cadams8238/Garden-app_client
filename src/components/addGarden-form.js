@@ -1,21 +1,20 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
+
 import { addGarden, hideAddGardenForm, getGardensData } from '../actions/userGardens';
+import { required, notEmpty, isFiveDigits } from '../validators';
 import ActionButton from './actionButton';
 import Input from './form-input';
-import { required, notEmpty, isFiveDigits } from '../validators';
 
 import form from './styles/Forms.module.css';
 
 
 export class AddGardenForm extends React.Component {
-
     hideForm() {
         this.props.dispatch(hideAddGardenForm());
     }
 
     addNew(values) {
-        console.log(values)
         this.props.dispatch(addGarden(values));
         this.hideForm();
         this.props.dispatch(getGardensData())
@@ -25,9 +24,6 @@ export class AddGardenForm extends React.Component {
         return (
             <form
                 className={form.addForm}
-                // onSubmit={this.props.handleSubmit(values =>
-                //     this.onSubmit(values)
-                // )}
             >
                 <fieldset>
                     <legend
@@ -74,6 +70,7 @@ export class AddGardenForm extends React.Component {
                                 this.addNew(values)
                             )}
                     />
+                    
                     <ActionButton
                         label="Close"
                         whenClicked={() => this.hideForm()}

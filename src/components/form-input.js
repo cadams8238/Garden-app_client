@@ -1,6 +1,7 @@
 import React from 'react';
 import form from './styles/Forms.module.css';
 
+
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
         if(!prevProps.meta.active && this.props.meta.active) {
@@ -26,13 +27,15 @@ export default class Input extends React.Component {
         const element = this.props.element || "text";
 
         return (
-            <label
-                htmlFor={this.props.id}
-                className={form.label}
-            >
-                {this.props.label}
-                {error}
-                {warning}
+            <React.Fragment>
+                <label
+                    htmlFor={this.props.id}
+                    className={form.label}
+                >
+                    {this.props.label}
+                    {error}
+                    {warning}
+                </label>
                 <input
                     className={form.input}
                     {...this.props.input}
@@ -40,9 +43,9 @@ export default class Input extends React.Component {
                     name={this.props.id}
                     id={this.props.id}
                     ref={input => this.input = input}
-                ></input>
-            </label>
+                >
+                </input>
+            </React.Fragment>
         );
     }
-
 }

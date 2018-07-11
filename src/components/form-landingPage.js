@@ -8,8 +8,8 @@ import Form_login from './form-login';
 import styles from './styles/Logo.module.css';
 import form from './styles/Forms.module.css';
 
-export function FormLandingPage(props) {
 
+export function FormLandingPage(props) {
     if(props.loggedIn) {
         return (
             <Redirect to="/dashboard/allGardens" />
@@ -18,13 +18,11 @@ export function FormLandingPage(props) {
 
     return (
         <div className={form.bkgrdImg}>
-            <header>
+            <header role="banner">
                 <h1 className={styles.formLogo}>Phytochor</h1>
             </header>
-            <main>
-                <Route exact path="/auth/signUp" component={Form_signUp} />
-                <Route exact path="/auth/login" component={Form_login} />
-            </main>
+            <Route exact path="/auth/signUp" component={Form_signUp} />
+            <Route exact path="/auth/login" component={Form_login} />
         </div>
     )
 

@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers/index';
 import thunk from 'redux-thunk';
+
+import rootReducer from './reducers/index';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 import {loadAuthToken} from './local-storage';
-
 
 
 const store = createStore(

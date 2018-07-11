@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { clearAuth } from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 import './styles/dashboard-header.css';
 import styles from './styles/Buttons.module.css';
 import logo from './styles/Logo.module.css';
-import {clearAuthToken} from '../local-storage';
+
 
 export function Header(props) {
     const logOut = () => {
@@ -13,17 +15,17 @@ export function Header(props) {
     }
 
     return (
-        <header>
-            <nav className="navbar">
-                <h1 className={logo.dashboardLogo}>Phytochor</h1>
-                <button
-                    onClick={() => logOut()}
-                    className={styles.signOut}
-                >
-                    Sign Out
-                </button>
-            </nav>
-        </header>
+        <nav role="navigation"
+            className="navbar"
+        >
+            <h1 className={logo.dashboardLogo}>Phytochor</h1>
+            <button
+                onClick={() => logOut()}
+                className={styles.signOut}
+            >
+                Sign Out
+            </button>
+        </nav>
     );
 }
 

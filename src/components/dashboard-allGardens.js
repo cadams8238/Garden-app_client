@@ -10,6 +10,7 @@ import button from './styles/Buttons.module.css';
 import dashboard from './styles/Dashboards.module.css';
 import typography from './styles/Typography.module.css';
 
+
 export class AllGardensDashboard extends React.Component {
     deleteGarden(id) {
         this.props.dispatch(deleteGardenFromDB(id));
@@ -31,7 +32,6 @@ export class AllGardensDashboard extends React.Component {
                         {garden.name}
                     </Link>
                 </h3>
-                {/* <p className="description">{garden.description}</p> */}
                 <p className={dashboard.location}>{garden.location}</p>
 
                 <button
@@ -44,21 +44,19 @@ export class AllGardensDashboard extends React.Component {
         ));
 
         return (
-            <div className={dashboard.mainContent}>
-                <section>
-                    <h2 className={typography.heading}>My Gardens</h2>
-                    {!this.props.adding ?
-                        <ActionButton
-                            label="+ New"
-                            whenClicked={() => this.showAddForm()}
-                        /> : <AddGardenForm />
-                    }
+            <section className={dashboard.mainContent}>
+                <h2 className={typography.heading}>My Gardens</h2>
+                {!this.props.adding ?
+                    <ActionButton
+                        label="+ New"
+                        whenClicked={() => this.showAddForm()}
+                    /> : <AddGardenForm />
+                }
 
-                </section>
                 <ul className={dashboard.gardensListView}>
                     {gardens}
                 </ul>
-            </div>
+            </section>
         );
     }
 

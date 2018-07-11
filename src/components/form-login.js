@@ -4,10 +4,11 @@ import { reduxForm, Field } from 'redux-form';
 
 import { login } from '../actions/auth';
 import { required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed } from '../validators';
-
 import ActionButton from './actionButton';
 import Input from './form-input';
+
 import form from './styles/Forms.module.css';
+
 
 export class Form_login extends React.Component {
     onSubmit(values) {
