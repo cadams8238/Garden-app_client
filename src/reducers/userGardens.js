@@ -9,6 +9,7 @@ import {
     ADD_GARDEN_ERROR
 } from '../actions/userGardens';
 
+
 const initialState = {
     data: [],
     adding: false,

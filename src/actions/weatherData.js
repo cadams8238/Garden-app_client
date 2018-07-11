@@ -23,23 +23,18 @@ const fetchWeatherDataError = error => ({
 const isRaining = (data, dispatch) => {
     const jsonKeys = Object.keys(data);
     const rain = jsonKeys.filter(key => key === 'rain');
-    // console.log(rain)
     return rain.length !== 0 ?
         dispatch(fetchWeatherDataSuccess(true)) :
         dispatch(fetchWeatherDataSuccess(false));
 }
 
 export const fetchWeatherData = (zipcode) => dispatch => {
-    // console.log(zipcode);
     dispatch(fetchWeatherDataRequest)
     return (
         fetch(`${API_BASE_URL}/weatherData/${zipcode}`)
             .then(response => normalizeResponseErrors(response))
             .then(res => res.json())
-            .then(jsonData => {
-                // console.log(jsonData);
-                return isRaining(jsonData, dispatch);
-            })
+            .then(jsonData => isRaining(jsonData, dispatch))
             .catch(err => dispatch(fetchWeatherDataError(err)))
     );
 }

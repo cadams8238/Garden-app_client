@@ -93,7 +93,6 @@ export const deleteGardenFromDB = id => (dispatch, getState) => {
 }
 
 export const addGarden = gardenInfo => (dispatch, getState) => {
-    // console.log(JSON.stringify(gardenInfo));
     const authToken = getState().auth.authToken;
 
     return (
@@ -105,10 +104,7 @@ export const addGarden = gardenInfo => (dispatch, getState) => {
             },
             body: JSON.stringify(gardenInfo)
         })
-        .then(res => {
-            // console.log(res)
-            normalizeResponseErrors(res)
-        })
+        .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(addGardenSuccess()))
         .catch(err => dispatch(addGardenError(err)))

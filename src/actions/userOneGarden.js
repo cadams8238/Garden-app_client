@@ -1,6 +1,6 @@
 import { API_BASE_URL } from '../.config';
 import { normalizeResponseErrors } from './utils';
-// import { SubmissionError } from 'redux-form';
+
 
 export const FETCH_ONE_GARDEN_REQUEST = 'FETCH_ONE_GARDEN_REQUEST';
 export const fetchOneGardenRequest = () => ({
@@ -32,14 +32,10 @@ export const fetchOneGardenData = (id) => (dispatch, getState) => {
             }
         })
         .then(res => normalizeResponseErrors(res))
-        .then(res => {
-            // console.log(res.json())
-            return res.json()
-        })
+        .then(res => res.json())
         .then(data => {
             dispatch(fetchOneGardenSuccess(data))
             return data;
-            // console.log(data)
         })
         .catch(err => dispatch(fetchOneGardenError(err)))
     );
