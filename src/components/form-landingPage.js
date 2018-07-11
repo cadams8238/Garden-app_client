@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Link } from 'react-router-dom';
 
 import Form_signUp from './form-signUp';
 import Form_login from './form-login';
 
-import styles from './styles/Logo.module.css';
+import logo from './styles/Logo.module.css';
 import form from './styles/Forms.module.css';
 
 
@@ -18,9 +18,11 @@ export function FormLandingPage(props) {
 
     return (
         <div className={form.bkgrdImg}>
-            <header role="banner">
-                <h1 className={styles.formLogo}>Phytochor</h1>
-            </header>
+            <nav role="navigation">
+                <Link to="/" className={logo.linkToHomePage}>
+                    <h1 className={logo.formLogo}>Phytochor</h1>
+                </Link>
+            </nav>
             <Route exact path="/auth/signUp" component={Form_signUp} />
             <Route exact path="/auth/login" component={Form_login} />
         </div>

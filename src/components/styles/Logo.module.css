@@ -13,3 +13,12 @@
     float: left;
     padding-left: 10%;
 }
+
+.linkToHomePage {
+    text-decoration: none;
+    color: black;
+}
+
+.linkToHomePage:hover {
+    text-decoration: underline;
+}
