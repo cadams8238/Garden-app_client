@@ -17,7 +17,7 @@ export function Header(props) {
     }
 
     return (
-        <nav role="navigation"
+        <header role="banner"
             className="navbar"
         >
             <Link to="/" className={logo.linkToHomePage}>
@@ -29,7 +29,7 @@ export function Header(props) {
             >
                 Sign Out
             </button>
-        </nav>
+        </header>
     );
 }
 

@@ -18,11 +18,11 @@ export function FormLandingPage(props) {
 
     return (
         <div className={form.bkgrdImg}>
-            <nav role="navigation">
+            <header role="banner">
                 <Link to="/" className={logo.linkToHomePage}>
                     <h1 className={logo.formLogo}>Phytochor</h1>
                 </Link>
-            </nav>
+            </header>
             <Route exact path="/auth/signUp" component={Form_signUp} />
             <Route exact path="/auth/login" component={Form_login} />
         </div>

@@ -13,9 +13,7 @@ export default function Home() {
 
     return (
         <React.Fragment>
-            <nav role="navigation"
-                className={styles.navbar}
-            >
+            <div className={styles.navbar}>
                 <Link to="/auth/signUp"
                     className={styles.navLink}
                 >
@@ -26,7 +24,7 @@ export default function Home() {
                 >
                     Login
                 </Link>
-            </nav>
+            </div>
 
             <section>
                 <header role="banner"
