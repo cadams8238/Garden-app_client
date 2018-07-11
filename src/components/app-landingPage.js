@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ActionButton from './actionButton';
 import styles from './styles/App-landingPage.module.css';
+
 import location from '../images/location.svg';
 import watering from '../images/watering.svg';
 import thumb from '../images/thumb.svg';
@@ -23,7 +24,10 @@ export default function Home() {
                 </Link>
             </nav>
             <section>
-                <div className={styles.landingPageImg}></div>
+                <div className={[styles.landingPageImg, styles.landingPageText].join(' ')}>
+                    <h1>Phytochor</h1>
+                    <p>Know when to water your garden based on the weather</p>
+                </div>
             </section>
             <section className={[styles.flexGrid, styles.featurePage].join(' ')}>
                 <div className={[styles.feature, styles.col].join(' ')}>
@@ -48,11 +52,40 @@ export default function Home() {
                     <p>Have a green thumb? Create multiple gardens.</p>
                 </div>
             </section>
-            <section>
-                <img
-                    src={beet}
-                    alt="Beet illustration"
-                />
+            <section className={[styles.flexGrid, styles.greenBkgrd].join(' ')}>
+                <div className={styles.col}>
+                    <img
+                        className={styles.beetImg}
+                        src={beet}
+                        alt="Beet illustration"
+                    />
+
+                    <div className={styles.beetText}>
+                        <h2>Ready to</h2>
+                        <h2>dig in?</h2>
+                        <Link to="/auth/signUp">
+                            <ActionButton
+                                label="Sign up"
+                            />
+                        </Link>
+                        <Link to="/auth/login">
+                            <p>Already signed up? Login here</p>
+                        </Link>
+                    </div>
+                </div>
+                <div className={[styles.col, styles.demoUser].join(' ')}>
+                    <p>
+                        Just looking to demo the app?
+                        Login with the following credientials to browse,
+                        no strings attached.
+                    </p>
+                    <p>
+                        <span>Username:</span> User
+                    </p>
+                    <p>
+                        <span>Password:</span> TestUser
+                    </p>
+                </div>
             </section>
         </div>
     );

@@ -3,7 +3,7 @@
     width: 100%;
     background-color: white;
     display: block;
-    height: 60px;
+    height: 55px;
 }
 
 .navLink {
@@ -12,9 +12,28 @@
 }
 
 .landingPageImg {
-    width: 100%;
-    height: 750px;
+    /* width: 100vw; */
+    height: 100vh;
     background: url("../../images/mobileLandingPage.svg") no-repeat top center;
+    background-size: cover;
+    text-align: center;
+}
+
+.landingPageImg h1 {
+    padding-top: 60%;
+
+}
+
+.landingPageText p {
+    font-style: italic;
+    font-size: 1.5em;
+    margin-top: 5px;
+}
+
+.landingPageText h1 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 3.5em;
 }
 
 .feature img,
@@ -35,11 +54,102 @@
     display: block;
 }
 
-.featurePage {
-    margin: 150px 0;
+.greenBkgrd {
+    background-color: #659003;
+    border: 1px solid black;
 }
 
-@media only screen and (min-width: 640px) {
+.greenBkgrd::after {
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.beetImg {
+    width: 80%;
+    margin-top: 80px;
+    border: 1px solid black;
+
+}
+
+.beetText {
+    width: 60%;
+    position: relative;
+    top: -450px;
+    left: 40%;
+    border: 1px solid black;
+}
+
+.beetText h2 {
+    font-family: 'Playfair display', serif;
+    color: white;
+    border: 1px solid black;
+    margin: 0;
+}
+
+.beetText h2:nth-child(2) {
+    margin-bottom: 125px;
+    /* border: 1px solid black; */
+}
+
+
+.demoUser {
+    border: 1px solid black;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.25em;
+}
+
+.demoUser span {
+    font-style: italic;
+    text-transform: uppercase;
+    display: block;
+}
+
+
+
+@media only screen and (min-width: 320px) {
+    .beetImg {
+        width: 70%;
+    }
+
+    .beetText {
+        top: -360px;
+    }
+
+    .beetText h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .landingPageImg h1 {
+        padding-top: 50%;
+
+    }
+
+
+}
+
+@media only screen and (min-width: 620px) {
+    .beetText {
+        top: -460px;
+    }
+
+    .beetText h2 {
+        font-size: 3.5em;
+    }
+
+    .landingPageImg h1 {
+        padding-top: 50%;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
     .flexGrid {
         display: flex;
     }
@@ -49,33 +159,38 @@
     }
 
     .landingPageImg {
+        /* width: 100%; */
+        width: 100vw;
+        height: 100vh;
         background: url("../../images/landingPage.svg") no-repeat top center;
+        background-size: cover;
+        border: 1px black solid;
+    }
+
+    .landingPageImg h1 {
+        padding-top: 25%;
+    }
+
+    .featurePage {
+        margin: 110px 0;
+    }
+
+    .beetText {
+        top: -350px;
+    }
+
+    .beetText h2 {
+        font-size: 3.5em;
     }
 }
 
-/******* GRID **************/
-/* .column3, .column4,
-.column6, .column12 {
-  float: left;
-  padding: 0 1.04166666%;
-  MOBILE DEFAULT
-  width: 100%;
+@media only screen and (min-width: 900px) {
+    .beetText {
+        top: -400px;
+    }
+
+
+    .landingPageImg h1 {
+        padding-top: 20%;
+    }
 }
-
-@media only screen and (min-width: 640px) {
-  .column3 {
-    width: 25%;
-  }
-
-  .column4 {
-    width: 33.333333%
-  }
-
-  .column6 {
-    width: 50%;
-  }
-
-  .column12 {
-    width: 100%;
-  }
-} */
