@@ -26,9 +26,10 @@ export default function Home() {
                 </Link>
             </div>
 
-            <section>
+            <section
+                className={[styles.landingPageImg, styles.landingPageText].join(' ')}
+            >
                 <header role="banner"
-                    className={[styles.landingPageImg, styles.landingPageText].join(' ')}
                 >
                     <h1>Phytochor</h1>
                     <p>Know when to water your garden based on the weather</p>

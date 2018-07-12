@@ -8,7 +8,7 @@ import Header from './dashboard-header';
 import AllGardensDashboard from './dashboard-allGardens';
 import OneGardenDashboard from './dashboard-oneGarden';
 import largeIllustration from '../images/dashboardFooter.svg';
-import smallIllustration from '../images/mobileFooter.svg';
+// import smallIllustration from '../images/mobileFooter.svg';
 import styles from './styles/Dashboards.module.css';
 
 
