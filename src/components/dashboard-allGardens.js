@@ -50,6 +50,7 @@ export class AllGardensDashboard extends React.Component {
                     <ActionButton
                         label="+ New"
                         whenClicked={() => this.showAddForm()}
+                        className="addNew"
                     /> : <AddGardenForm />
                 }
 

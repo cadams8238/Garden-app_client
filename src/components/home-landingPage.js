@@ -73,6 +73,7 @@ export default function Home() {
                         <Link to="/auth/signUp">
                             <ActionButton
                                 label="Sign up"
+                                className="greenOnGreen"
                             />
                         </Link>
                         <Link to="/auth/login" className={styles.loginLink}>

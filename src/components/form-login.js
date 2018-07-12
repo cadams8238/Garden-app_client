@@ -42,7 +42,10 @@ export class Form_login extends React.Component {
                         element="password"
                     />
 
-                    <ActionButton label="Submit"/>
+                    <ActionButton
+                        label="Submit"
+                        className="authForm"
+                    />
 
                     <p>
                         <Link to="/auth/signUp" className={form.link}>

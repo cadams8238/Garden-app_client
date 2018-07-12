@@ -63,18 +63,22 @@ export class AddGardenForm extends React.Component {
                         element="number"
                     />
 
-                    <ActionButton
-                        label="Save"
-                        whenClicked=
-                            {this.props.handleSubmit(values =>
-                                this.addNew(values)
-                            )}
-                    />
-                    
-                    <ActionButton
-                        label="Close"
-                        whenClicked={() => this.hideForm()}
-                    />
+                    <div className={form.addNewButtons}>
+                        <ActionButton
+                            label="Save"
+                            whenClicked=
+                                {this.props.handleSubmit(values =>
+                                    this.addNew(values)
+                                )}
+                            className="addNewForm"
+                        />
+
+                        <ActionButton
+                            label="Close"
+                            whenClicked={() => this.hideForm()}
+                            className="addNewForm"
+                        />
+                    </div>
                 </fieldset>
             </form>
         );

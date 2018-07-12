@@ -64,7 +64,10 @@ export class Form_signUp extends React.Component {
                         validate={[required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed]}
                     /> */}
 
-                    <ActionButton label="Submit"/>
+                    <ActionButton
+                        label="Submit"
+                        className="authForm"
+                    />
 
                     <p>
                         <Link to="/auth/login" className={form.link}>

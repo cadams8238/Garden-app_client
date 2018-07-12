@@ -40,3 +40,7 @@ p.location {
     font-style: italic;
     text-transform: capitalize;
 }
+
+.footerImg {
+    margin-top: 50px;
+}
