@@ -3,6 +3,11 @@
     font-size: 2.5em;
 }
 
+.italicSubheading {
+    text-transform: uppercase;
+    font-style: italic;
+}
+
 .subHeading {
 
 }

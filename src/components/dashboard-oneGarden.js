@@ -26,9 +26,21 @@ export class OneGardenDashboard extends React.Component {
         return (
             <section className={dashboard.mainContent}>
                 <h2 className={typography.heading}>{this.props.garden.name}</h2>
-                <p>Location: {this.props.garden.location}</p>
-                <p>Description: {this.props.garden.description}</p>
-                {watering}
+                <p>
+                    <span className={typography.italicSubheading}>
+                    Location:
+                    </span>
+                    {` ${this.props.garden.location}`}
+                </p>
+                <p>
+                    <span className={typography.italicSubheading}>
+                    Description:
+                    </span>
+                    {` ${this.props.garden.description}`}
+                </p>
+                <div className={dashboard.needToWater}>
+                    {watering}
+                </div>
                 {/* <form>
                     <h4 className="tasks">Tasks for Today:</h4>
                     <ul className="to-do-list">

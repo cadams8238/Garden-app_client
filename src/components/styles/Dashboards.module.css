@@ -14,10 +14,6 @@ li.condensedGarden {
     padding: 5px 20px;
 }
 
-/* li.condensedGarden:nth-child(1) {
-    padding-top: 20px;
-} */
-
 .subheading {
     font-weight: 400;
     text-transform: capitalize;
@@ -43,4 +39,8 @@ p.location {
 
 .footerImg {
     margin-top: 50px;
+}
+
+.needToWater {
+    margin-top: 60px;
 }

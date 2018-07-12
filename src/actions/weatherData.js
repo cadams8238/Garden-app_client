@@ -23,7 +23,7 @@ const fetchWeatherDataError = error => ({
 const isRaining = (data, dispatch) => {
     const jsonKeys = Object.keys(data);
     const rain = jsonKeys.filter(key => key === 'rain');
-    return rain.length !== 0 ?
+    return rain.length === 0 ?
         dispatch(fetchWeatherDataSuccess(true)) :
         dispatch(fetchWeatherDataSuccess(false));
 }
