@@ -25,8 +25,7 @@ export class Form_signUp extends React.Component {
 
     render() {
         return (
-            <form
-                className={form.form}
+            <form className={form.form}
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}
@@ -39,6 +38,7 @@ export class Form_signUp extends React.Component {
                         label="Username:"
                         component={Input}
                         validate={[required, notEmpty, isTrimmed]}
+                        aria-required="true"
                     />
                     {/* <Field
                         id="email"
@@ -54,6 +54,7 @@ export class Form_signUp extends React.Component {
                         component={Input}
                         element="password"
                         validate={[required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed]}
+                        aria-required="true"
                     />
                     {/* <Field
                         id="confirm-password"

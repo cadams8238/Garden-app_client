@@ -16,10 +16,13 @@ export function Header(props) {
     }
 
     return (
-        <header role="banner"
+        <div role="navigation" aria-label="Dashboard menu"
             className={dashboard.navbar}
         >
-            <Link to="/" className={logo.linkToHomePage}>
+            <Link to="/"
+                className={logo.linkToHomePage}
+                aria-label="Home page"
+            >
                 <h1 className={logo.dashboardLogo}>Phytochor</h1>
             </Link>
             <button
@@ -28,7 +31,7 @@ export function Header(props) {
             >
                 Sign Out
             </button>
-        </header>
+        </div>
     );
 }
 

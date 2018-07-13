@@ -24,7 +24,7 @@ export class DashboardTemplate extends React.Component {
         //     {smallIllustration}
 
         return (
-            <React.Fragment>
+            <main role="main">
                 <Header />
                 <Route exact path="/dashboard/allGardens" component={AllGardensDashboard} />
                 <Route path="/dashboard/oneGarden/:id" component={OneGardenDashboard} />
@@ -33,7 +33,7 @@ export class DashboardTemplate extends React.Component {
                     src={largeIllustration}
                     alt="Fruit and veggie illustrations"
                 />
-            </React.Fragment>
+            </main>
         );
     }
 }

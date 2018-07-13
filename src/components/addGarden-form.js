@@ -22,9 +22,7 @@ export class AddGardenForm extends React.Component {
 
     render() {
         return (
-            <form
-                className={form.addForm}
-            >
+            <form className={form.addForm}>
                 <fieldset>
                     <legend
                         className={form.addNewTitle}
@@ -37,6 +35,7 @@ export class AddGardenForm extends React.Component {
                         label="Name:"
                         component={Input}
                         validate={[required, notEmpty]}
+                        aria-required="true"
                     />
 
                     <Field
@@ -52,6 +51,7 @@ export class AddGardenForm extends React.Component {
                         label="Location:"
                         component={Input}
                         validate={[required, notEmpty]}
+                        aria-required="true"
                     />
 
                     <Field
@@ -61,6 +61,7 @@ export class AddGardenForm extends React.Component {
                         component={Input}
                         validate={[required, notEmpty, isFiveDigits]}
                         element="number"
+                        aria-required="true"
                     />
 
                     <div className={form.addNewButtons}>

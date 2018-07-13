@@ -24,7 +24,9 @@ export class OneGardenDashboard extends React.Component {
             <p>No need to water today. Nature's got it.</p>;
 
         return (
-            <section className={dashboard.mainContent}>
+            <section role="main"
+                className={dashboard.mainContent}
+            >
                 <h2 className={typography.heading}>{this.props.garden.name}</h2>
                 <p>
                     <span className={typography.italicSubheading}>
@@ -38,7 +40,9 @@ export class OneGardenDashboard extends React.Component {
                     </span>
                     {` ${this.props.garden.description}`}
                 </p>
-                <div className={dashboard.needToWater}>
+                <div aria-live="polite"
+                    className={dashboard.needToWater}
+                >
                     {watering}
                 </div>
                 {/* <form>

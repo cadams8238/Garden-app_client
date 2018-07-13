@@ -18,8 +18,7 @@ export class Form_login extends React.Component {
 
     render() {
         return (
-            <form
-                className={form.form}
+            <form className={form.form}
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}
@@ -32,6 +31,7 @@ export class Form_login extends React.Component {
                         label="Username:"
                         component={Input}
                         validate={[required, notEmpty, isTrimmed]}
+                        aria-required="true"
                     />
                     <Field
                         id="password"
@@ -40,6 +40,7 @@ export class Form_login extends React.Component {
                         component={Input}
                         validate={[required, notEmpty, isSixCharLong, lessThanSeventyTwoChar, isTrimmed]}
                         element="password"
+                        aria-required="true"
                     />
 
                     <ActionButton

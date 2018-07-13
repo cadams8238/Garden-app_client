@@ -44,17 +44,23 @@ export class AllGardensDashboard extends React.Component {
         ));
 
         return (
-            <section className={dashboard.mainContent}>
+            <section role="main"
+                className={dashboard.mainContent}
+            >
                 <h2 className={typography.heading}>My Gardens</h2>
                 {!this.props.adding ?
                     <ActionButton
                         label="+ New"
                         whenClicked={() => this.showAddForm()}
                         className="addNew"
+                        aria-label="Add new garden to list"
                     /> : <AddGardenForm />
                 }
 
-                <ul className={dashboard.gardensListView}>
+                <ul
+                    aria-live="polite"
+                    className={dashboard.gardensListView}
+                >
                     {gardens}
                 </ul>
             </section>
