@@ -87,9 +87,9 @@ export default function Home() {
                             no strings attached.
                         </p>
                         <p>Username:</p>
-                        <p>User</p>
+                        <p>user</p>
                         <p>Password:</p>
-                        <p>TestUser</p>
+                        <p>testUser</p>
                     </div>
                 </section>
             </main>

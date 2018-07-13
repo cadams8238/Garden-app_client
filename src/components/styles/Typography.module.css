@@ -1,6 +1,7 @@
 .heading {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
+    text-transform: capitalize;
 }
 
 .italicSubheading {
