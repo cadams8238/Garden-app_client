@@ -21,22 +21,6 @@ describe('<OneGardenDashboard />', () => {
             })
         }
 
-        // const garden = {
-        //     name: "garden",
-        //     location: "nowhere",
-        //     description: "grow all the things"
-        // }
-        //
-        // const match = {
-        //     params: {
-        //         id: 123
-        //     }
-        // }
-        //
-        // const dispatch = () => ({
-        //     then: () => {}
-        // });
-
         shallow(<OneGardenDashboard {...props}/>);
     })
 });
