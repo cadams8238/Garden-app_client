@@ -7,7 +7,8 @@ import { fetchWeatherData } from '../actions/weatherData';
 
 import dashboard from './styles/Dashboards.module.css';
 import typography from './styles/Typography.module.css';
-
+import waterCan from "../images/watering.svg";
+import raincloud from "../images/raincloud.svg";
 
 export class OneGardenDashboard extends React.Component {
     componentDidMount() {
@@ -20,8 +21,24 @@ export class OneGardenDashboard extends React.Component {
 
     render() {
         const watering = this.props.needsWatering ?
-            <p>Water Garden</p> :
-            <p>No need to water today. Nature's got it.</p>;
+            <React.Fragment>
+                <img
+                    src={waterCan} alt="watering can"
+                    className={dashboard.needToWaterImg}
+                />
+                <p className={typography.body}>
+                    It's not raining today. Your garden needs watering!
+                </p>
+            </React.Fragment> :
+            <React.Fragment>
+                <img
+                    src={raincloud} alt="raincloud"
+                    className={dashboard.needToWaterImg}
+                />
+                <p className={typography.body}>
+                    No need to water today. Nature's got it.
+                </p>
+            </React.Fragment>
 
         return (
             <section role="main"
@@ -33,6 +50,12 @@ export class OneGardenDashboard extends React.Component {
                     Location:
                     </span>
                     {` ${this.props.garden.location}`}
+                </p>
+                <p>
+                    <span className={typography.italicSubheading}>
+                    Zipcode:
+                    </span>
+                    {` ${this.props.garden.zipcode}`}
                 </p>
                 <p>
                     <span className={typography.italicSubheading}>

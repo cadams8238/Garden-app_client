@@ -40,15 +40,14 @@ li.condensedGarden {
     text-decoration: underline;
 }
 
-p.location {
-    font-style: italic;
-    text-transform: capitalize;
-}
-
 .footerImg {
     margin-top: 50px;
 }
 
 .needToWater {
     margin-top: 60px;
+}
+
+.needToWaterImg {
+    width: 300px;
 }
