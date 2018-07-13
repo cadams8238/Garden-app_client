@@ -61,14 +61,30 @@ https://garden-client.herokuapp.com/
     * Mocha/Chai
 
 
-##### Codebase Walkthrough
+##### Codebase Structure
 
-    * **src:**
-        * actions/reducers (using redux)
-        * components
-            * styles (css)
-        * images
-
+    client/
+        node_modules
+        package.json
+        README.md
+        public/
+            index.html
+            favicon.favicon
+            manifest.json
+        src
+            actions/ (using redux)
+            reducers/ (using redux)
+            components/
+                styles/ (css)
+            images/
+                readmeImgs
+            __tests__/
+            App.js
+            index.js
+            store.js
+            validators.js
+            local-storage.js
+            setupTests.js
 
 
 Link to server repo: https://github.com/cadams8238/Garden-app_server
