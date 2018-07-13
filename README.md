@@ -24,9 +24,23 @@ https://garden-client.herokuapp.com/
 
 ## Mobile View
 
-![Landing Page](src/images/beet.svg)
-![Gardens Dashboard](src/images/beet.svg)
-![Single Garden Dashboard](src/images/beet.svg)
+![Mobile Landing Page](src/images/readmeImgs/mobile-landingImg.png)
+![Mobile Landing Page](src/images/readmeImgs/mobile-features.png)
+
+![Mobile Landing Page](src/images/readmeImgs/mobile-features2.png)
+
+![Mobile Landing Page](src/images/readmeImgs/mobile-demoUser.png)
+![Mobile Landing Page](src/images/readmeImgs/mobile-demoUser2.png)
+
+![Mobile Gardens Dashboard](src/images/readmeImgs/mobile-gardenDash.png)
+
+![Mobile Gardens Dashboard](src/images/readmeImgs/mobile-gardenDash2.png)
+
+
+![Mobile Single Garden Dashboard](src/images/readmeImgs/mobile-garden.png)
+
+![Mobile Single Garden Dashboard](src/images/readmeImgs/mobile-garden2.png)
+
 
 
 ## Tech stack:
